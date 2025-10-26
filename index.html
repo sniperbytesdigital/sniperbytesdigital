@@ -47,17 +47,17 @@
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
-            justify-content: center;
-            position: relative;
-            padding: 0px;
+			justify-content: center;
+			position: relative;
+			padding:0px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
-            position: absolute;
-            left: 0;
+			position: absolute;
+			left: 0;
         }
 
         .logo-icon {
@@ -69,7 +69,7 @@
         }
 
         .logo-icon img {
-            margin-top: 10px;
+		margin-top:10px;
             width: 250%;
             height: 250%;
             object-fit: contain;
@@ -84,9 +84,9 @@
         }
 
         .logo-main {
-            margin-top: 30px;
-            margin-left: 50px;
-            font-size: 2.9rem;
+            margin-top:30px;
+			margin-left:50px;
+			font-size: 2.9rem;
             font-weight: 800;
             letter-spacing: 2px;
             color: white;
@@ -94,7 +94,7 @@
         }
 
         .logo-tagline {
-            margin-left: 230px;
+			margin-left:230px;
             font-size: 0.9rem;
             font-style: italic;
             color: var(--accent-green);
@@ -190,8 +190,8 @@
             font-size: 1.5rem;
             color: var(--cyber-green);
             cursor: pointer;
-            position: absolute;
-            right: 0;
+			position: absolute;
+    right: 0;
         }
 
         /* Batch Announcement Styles */
@@ -210,7 +210,7 @@
             z-index: 999;
             border-bottom: 2px solid #ff4444;
             animation: pulse-glow 2s infinite;
-            margin-top: 35px;
+			margin-top:35px;
         }
 
         .batch-announcement::before {
@@ -478,68 +478,10 @@
             opacity: 0.9;
         }
 
-        /* WhatsApp Link Styles */
-        .whatsapp-link {
-            font-size: 1.0rem;
-            font-weight: 200;
-            color: var(--cyber-green);
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: rgba(0, 255, 136, 0.1);
-            border-radius: 8px;
-            border-left: 4px solid var(--cyber-green);
-            margin-left: 100px;
-        }
-
-        .whatsapp-link a {
-            color: var(--accent-green);
-            text-decoration: none;
-            font-weight: 500;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.3rem 0.8rem;
-            border-radius: 4px;
-            border: 1px solid var(--light-green);
-            word-break: break-all;
-        }
-
-        .whatsapp-link a:hover {
-            background: rgba(0, 255, 136, 0.2);
-            color: white;
-        }
-
-        /* Responsive Design - Enhanced for Mobile */
-        @media (max-width: 1200px) {
-            .logo-main {
-                font-size: 2.5rem;
-            }
-            
-            .logo-tagline {
-                margin-left: 200px;
-            }
-            
-            .whatsapp-link {
-                margin-left: 80px;
-            }
-        }
-
+        /* Responsive Design */
         @media (max-width: 992px) {
             .nav-menu {
                 gap: 1rem;
-            }
-            
-            .logo-main {
-                font-size: 2.2rem;
-                margin-left: 40px;
-            }
-            
-            .logo-tagline {
-                margin-left: 180px;
-                font-size: 0.8rem;
-            }
-            
-            .whatsapp-link {
-                margin-left: 60px;
-                font-size: 0.9rem;
             }
         }
 
@@ -591,33 +533,6 @@
             .section-title h2 {
                 font-size: 2rem;
             }
-            
-            .logo-container {
-                position: relative;
-                left: auto;
-            }
-            
-            .logo-main {
-                font-size: 2rem;
-                margin-left: 0;
-                margin-top: 10px;
-            }
-            
-            .logo-tagline {
-                margin-left: 0;
-                text-align: center;
-            }
-            
-            .whatsapp-link {
-                margin-left: 0;
-                text-align: center;
-                font-size: 0.9rem;
-            }
-            
-            .hero-section {
-                margin-top: 100px;
-                min-height: 15vh;
-            }
         }
 
         @media (max-width: 576px) {
@@ -634,123 +549,41 @@
                 height: 40px;
             }
             
-            .logo-icon img {
-                width: 200%;
-                height: 200%;
-            }
-            
             .hero-section {
                 padding: 1rem;
-                margin-top: 80px;
-                min-height: 10vh;
             }
 
             .batch-announcement {
                 font-size: 0.8rem;
                 padding: 0.5rem 1rem;
             }
-            
-            .home-content {
-                padding: 1rem 1rem 3rem 1rem;
-            }
-            
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .feature-card {
-                padding: 1.5rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .section-title p {
-                font-size: 1rem;
-            }
-            
-            .excellence-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            .excellence-content > p {
-                font-size: 1rem;
-            }
-            
-            .excellence-list li {
-                font-size: 1rem;
-                padding: 0.6rem 0;
-            }
-            
-            .stat-item {
-                padding: 1.5rem;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .whatsapp-link {
-                font-size: 0.8rem;
-                padding: 0.8rem;
-            }
-            
-            .whatsapp-link a {
-                padding: 0.2rem 0.5rem;
-                font-size: 0.8rem;
-            }
         }
+		.hero-section {
+    margin-top: 80px; /* Reduced from 120px */
+    padding: 0.5rem 2rem; /* Reduced from 1rem 2rem */
+    text-align: center;
+    background: radial-gradient(circle at center, rgba(10, 92, 54, 0.2) 0%, rgba(10, 15, 12, 0.8) 70%);
+    position: relative;
+    overflow: hidden;
+    min-height: 10vh; /* Reduced from 20vh */
+}
 
-        @media (max-width: 480px) {
-            .logo-main {
-                font-size: 1.3rem;
-            }
-            
-            .logo-tagline {
-                font-size: 0.7rem;
-            }
-            
-            .hero-section {
-                margin-top: 70px;
-                min-height: 8vh;
-            }
-            
-            .section-title h2 {
-                font-size: 1.6rem;
-            }
-            
-            .feature-card h3 {
-                font-size: 1.2rem;
-            }
-            
-            .feature-card p {
-                font-size: 0.9rem;
-            }
-            
-            .excellence-content h2 {
-                font-size: 1.6rem;
-            }
-            
-            .excellence-list li {
-                font-size: 0.9rem;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-            }
-        }
+.home-content {
+    padding: 0.5rem 2rem 5rem 2rem; /* Reduced top padding from 1rem to 0.5rem */
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #0c1511 100%);
+    position: relative;
+    overflow: hidden;
+}
+.header {
+    padding: 1.8rem 2rem; /* Increased padding for taller header */
+    min-height: 100px; /* Set minimum height */
+}
 
-        /* Header height adjustments */
-        .header {
-            padding: 1.8rem 2rem;
-            min-height: 100px;
-        }
+.hero-section {
+    margin-top: 140px; /* Increased to account for taller header */
+}
 
-        .hero-section {
-            margin-top: 140px;
-        }
+
     </style>
 </head>
 <body>
@@ -770,12 +603,15 @@
                 <i class="fas fa-bars"></i>
             </div>
             
-            <div class="whatsapp-link">
-                <strong>CLICK AND JOIN WHATSAPP GROUP FOR UPDATES AND ADMISSIONS</strong><br><br>
-                <a href="https://chat.whatsapp.com/C507XhQjyzNAehoNeBdB4v?mode=wwt">
-                    https://chat.whatsapp.com/C507XhQjyzNAehoNeBdB4v?mode=wwt
-                </a>
-            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p style="font-size: 1.0rem; font-weight: 200; color: var(--cyber-green); margin: 1.5rem 0; padding: 1rem; background: rgba(0, 255, 136, 0.1); border-radius: 8px; border-left: 4px solid var(--cyber-green);margin-left:100px;">
+    <strong>CLICK AND JOIN WHATSAPP GROUP FOR UPDATES AND ADMISSIONS</strong><br><br>
+    <a href="https://chat.whatsapp.com/C507XhQjyzNAehoNeBdB4v?mode=wwt" 
+       style="color: var(--accent-green); text-decoration: none; font-weight: 500; background: rgba(255, 255, 255, 0.05); padding: 0.3rem 0.8rem; border-radius: 4px; border: 1px solid var(--light-green);"
+       onmouseover="this.style.background='rgba(0, 255, 136, 0.2)'; this.style.color='white';"
+       onmouseout="this.style.background='rgba(255, 255, 255, 0.05)'; this.style.color='var(--accent-green)';">
+       https://chat.whatsapp.com/C507XhQjyzNAehoNeBdB4v?mode=wwt
+    </a>
+</p>
 
             <!-- New Batch Announcement Box -->
             <div class="batch-announcement">
@@ -798,7 +634,7 @@
         </div>
         <!-- Hero section is now empty with minimal height -->
     </section>
-    <br><br><br>
+	<br><br><br>
     <!-- Home Content Section - Now starts immediately after header -->
     <section class="home-content">
         <div class="container">
@@ -854,6 +690,7 @@
                     </div>
                     <h3>Advanced Networking</h3>
                     <p>Join our exclusive community of cybersecurity professionals and gain access to job opportunities, collaborations, and continuous learning.</p>
+				
                 </div>
             </div>
 
@@ -927,24 +764,6 @@
             } else {
                 header.style.padding = '1rem 2rem';
                 header.style.background = 'linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%)';
-            }
-        });
-
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileToggle = document.querySelector('.mobile-toggle');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            if (!mobileToggle.contains(event.target) && !navMenu.contains(event.target) && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-            }
-        });
-
-        // Handle window resize
-        window.addEventListener('resize', function() {
-            const navMenu = document.querySelector('.nav-menu');
-            if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
             }
         });
     </script>

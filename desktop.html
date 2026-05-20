@@ -294,6 +294,110 @@
             animation: float 5s ease-in-out infinite;
         }
 
+        /* ANIMATION FOR DARK WEB LINK - NEW STYLES ADDED */
+        .animated-darkweb {
+            display: inline-block;
+            animation: glowPulse 1.5s ease-in-out infinite, textGlitch 3s infinite;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 4px 8px;
+            border-radius: 8px;
+            background: rgba(0, 255, 136, 0.1);
+            letter-spacing: 1px;
+        }
+
+        .animated-darkweb:hover {
+            transform: scale(1.02);
+            background: rgba(0, 255, 136, 0.25);
+            text-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+        }
+
+        @keyframes glowPulse {
+            0% {
+                text-shadow: 0 0 2px rgba(0, 255, 136, 0.3), 0 0 5px rgba(0, 255, 136, 0.2);
+                border-color: rgba(0, 255, 136, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 12px rgba(0, 255, 136, 0.8), 0 0 20px rgba(0, 255, 136, 0.5);
+                border-color: rgba(0, 255, 136, 0.9);
+            }
+            100% {
+                text-shadow: 0 0 2px rgba(0, 255, 136, 0.3), 0 0 5px rgba(0, 255, 136, 0.2);
+                border-color: rgba(0, 255, 136, 0.3);
+            }
+        }
+
+        @keyframes textGlitch {
+            0%, 100% {
+                transform: skew(0deg);
+            }
+            95% {
+                transform: skew(0deg);
+            }
+            96% {
+                transform: skew(1deg);
+            }
+            97% {
+                transform: skew(-1deg);
+            }
+            98% {
+                transform: skew(0.5deg);
+            }
+            99% {
+                transform: skew(-0.5deg);
+            }
+        }
+
+        .darkweb-container {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .darkweb-label {
+            color: var(--cyber-green);
+            font-weight: 600;
+        }
+
+        .copy-icon {
+            background: rgba(0, 255, 136, 0.2);
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            margin-left: 5px;
+        }
+
+        .copy-icon:hover {
+            background: rgba(0, 255, 136, 0.5);
+            transform: scale(1.05);
+        }
+
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--cyber-green);
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 2000;
+            animation: fadeInOut 2s ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateX(50px); }
+            15% { opacity: 1; transform: translateX(0); }
+            85% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(50px); }
+        }
+
         /* Home Content Styles - Adjusted spacing */
         .home-content {
             padding: 1rem 2rem 5rem 2rem;
@@ -571,6 +675,11 @@
             .section-title h2 {
                 font-size: 2rem;
             }
+            
+            .darkweb-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
 
         @media (max-width: 576px) {
@@ -637,10 +746,20 @@
                 </div>
 
 				<div>
-					<b>ADMISSIONS - MAIL US AT</b><br>
-					sniperbytesofficial@gmail.com - GOOGLE CHAT TO SEND MESSAGES</b><br>
-					sniperbytesofficial@jabber.fr - XMPP CHAT TO SEND MESSAGES<br><br>
-					DARK WEB LINK - ih7uequqimy5ajxe4zavuwvrxfq3rgutpnkotqjthdebfmwvvbbqa3ad.onion
+                    <br><br><br><br><br>
+					<b>CONTACT INFORMATION</b><br>
+					GOOGLE CHAT - sniperbytesofficial@gmail.com </b> <br>
+					XMPP CHAT - sniperbytesofficial@jabber.fr<br>
+					WEBSITE - https://sniperbytes.com <br><br>
+                    <!-- ANIMATED DARK WEB LINK - MODIFIED SECTION -->
+                    <div class="darkweb-container">
+                        <span class="darkweb-label">🌐 DARK WEB LINK -</span>
+                        <span class="animated-darkweb" id="darkwebLink">ih7uequqimy5ajxe4zavuwvrxfq3rgutpnkotqjthdebfmwvvbbqa3ad.onion</span>
+                        <i class="fas fa-copy copy-icon" onclick="copyDarkWebLink()" title="Copy to clipboard"></i> <br>
+                    </div>
+                    <p>SNIPER BYTES MEMBERS REGISTER IN DARK WEB FOR DISCUSSIONS
+                        - USE A TOR BROWSER AND REGISTER WITH GMAIL
+                        </p>
 				</div>
             </div>
             
@@ -796,6 +915,53 @@
                 header.style.padding = '1rem 2rem';
                 header.style.background = 'linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%)';
             }
+        });
+
+        // NEW FUNCTION: Copy dark web link to clipboard
+        function copyDarkWebLink() {
+            const linkText = "ih7uequqimy5ajxe4zavuwvrxfq3rgutpnkotqjthdebfmwvvbbqa3ad.onion";
+            
+            // Modern clipboard API
+            navigator.clipboard.writeText(linkText).then(function() {
+                // Show success notification
+                showToast("✅ Dark Web link copied to clipboard!");
+            }).catch(function() {
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = linkText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                showToast("✅ Dark Web link copied to clipboard!");
+            });
+        }
+
+        // Function to show toast notification
+        function showToast(message) {
+            // Remove existing toast if any
+            const existingToast = document.querySelector('.toast-notification');
+            if (existingToast) {
+                existingToast.remove();
+            }
+            
+            // Create new toast
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            // Remove toast after animation
+            setTimeout(function() {
+                if (toast && toast.parentNode) {
+                    toast.remove();
+                }
+            }, 2000);
+        }
+
+        // Optional: Make the dark web link clickable to copy (if users click the link itself)
+        document.getElementById('darkwebLink').addEventListener('click', function() {
+            copyDarkWebLink();
         });
     </script>
 </body>

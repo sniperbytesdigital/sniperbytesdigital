@@ -620,7 +620,9 @@
             opacity: 0.9;
         }
 
-        /* Responsive Design */
+        /* ============================================================
+           DESKTOP + TABLET RESPONSIVE (original, untouched)
+           ============================================================ */
         @media (max-width: 992px) {
             .nav-menu {
                 gap: 1rem;
@@ -705,161 +707,175 @@
                 padding: 0.5rem 1rem;
             }
         }
-		.hero-section {
-    margin-top: 80px; /* Reduced from 120px */
-    padding: 0.5rem 2rem; /* Reduced from 1rem 2rem */
-    text-align: center;
-    background: radial-gradient(circle at center, rgba(10, 92, 54, 0.2) 0%, rgba(10, 15, 12, 0.8) 70%);
-    position: relative;
-    overflow: hidden;
-    min-height: 10vh; /* Reduced from 20vh */
-}
 
-.home-content {
-    padding: 0.5rem 2rem 5rem 2rem; /* Reduced top padding from 1rem to 0.5rem */
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #0c1511 100%);
-    position: relative;
-    overflow: hidden;
-}
-.header {
-    padding: 1.8rem 2rem; /* Increased padding for taller header */
-    min-height: 100px; /* Set minimum height */
-}
+        /* Desktop overrides (unchanged) */
+        .hero-section {
+            margin-top: 80px;
+            padding: 0.5rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(10, 92, 54, 0.2) 0%, rgba(10, 15, 12, 0.8) 70%);
+            position: relative;
+            overflow: hidden;
+            min-height: 10vh;
+        }
 
-.hero-section {
-    margin-top: 140px; /* Increased to account for taller header */
-}
+        .home-content {
+            padding: 0.5rem 2rem 5rem 2rem;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0c1511 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-/* ============================================================ */
-/* ============ MOBILE FIXES (added without changing HTML) ===== */
-/* ============================================================ */
-@media (max-width: 768px) {
-    /* Header – fix logo margins & prevent overflow */
-    .logo-main {
-        margin-top: 5px !important;
-        margin-left: 0 !important;
-        font-size: 1.8rem !important;
-    }
-    .logo-tagline {
-        margin-left: 0 !important;
-        font-size: 0.7rem !important;
-    }
-    .logo-container {
-        flex-wrap: wrap;
-        gap: 5px;
-        position: relative !important; /* remove absolute to avoid overlap */
-        left: auto !important;
-        justify-content: flex-start;
-        width: 80%;
-    }
-    .logo-icon {
-        width: 40px;
-        height: 40px;
-    }
-    .logo-icon img {
-        margin-top: 5px;
-        width: 200%;
-        height: 200%;
-    }
-    /* Contact info inside header – reduce size */
-    .logo-container > div:last-child {
-        font-size: 0.7rem;
-        width: 100%;
-        margin-top: 5px;
-        padding: 5px;
-        background: rgba(0,0,0,0.2);
-        border-radius: 8px;
-        text-align: center;
-        word-break: break-word;
-    }
-    .logo-container > div:last-child br {
-        display: none; /* adjust line breaks */
-    }
-    .mobile-toggle {
-        position: relative !important;
-        right: auto !important;
-        top: auto !important;
-    }
-    .header-container {
-        justify-content: space-between !important;
-        flex-wrap: wrap;
-        padding: 0 10px;
-    }
-    /* Hero section – reduce top margin */
-    .hero-section {
-        margin-top: 80px !important;
-        min-height: 5vh !important;
-        padding: 0.5rem 1rem !important;
-    }
-    /* Home content – reduce padding */
-    .home-content {
-        padding: 0.5rem 1rem 3rem 1rem !important;
-    }
-    /* Feature cards – full width with smaller icons */
-    .features-grid {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-    }
-    .feature-card {
-        padding: 1.5rem;
-    }
-    .feature-icon i {
-        font-size: 70px !important; /* scale circles down */
-    }
-    .feature-icon {
-        width: 80px;
-        height: 80px;
-    }
-    .section-title h2 {
-        font-size: 1.8rem;
-    }
-    .section-title p {
-        font-size: 1rem;
-    }
-    /* Excellence section – full width */
-    .excellence-section {
-        grid-template-columns: 1fr !important;
-        gap: 1.5rem;
-    }
-    .stat-number {
-        font-size: 2rem;
-    }
-    /* Adjust any absolute positioned elements */
-    .header {
-        padding: 0.8rem 1rem !important;
-        min-height: auto !important;
-    }
-    /* fix header background on scroll */
-    .header.scrolled {
-        padding: 0.5rem 1rem !important;
-    }
-    /* Fix nav menu if it shows up */
-    .nav-menu {
-        gap: 0.5rem;
-    }
-    .nav-link {
-        font-size: 1rem;
-    }
-}
+        .header {
+            padding: 1.8rem 2rem;
+            min-height: 100px;
+        }
 
-@media (max-width: 576px) {
-    .logo-main {
-        font-size: 1.5rem !important;
-    }
-    .logo-tagline {
-        font-size: 0.6rem !important;
-    }
-    .feature-icon i {
-        font-size: 60px !important;
-    }
-    .batch-announcement {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.8rem;
-    }
-    .logo-container > div:last-child {
-        font-size: 0.6rem;
-    }
-}
+        .hero-section {
+            margin-top: 140px;
+        }
+
+        /* ============================================================
+           MOBILE HEADER ALIGNMENT FIX (for phones ONLY)
+           ============================================================ */
+        @media (max-width: 768px) {
+            /* Fix header container alignment */
+            .header-container {
+                justify-content: space-between !important;
+                align-items: center !important;
+                flex-wrap: wrap;
+                padding: 0 10px;
+            }
+
+            /* Fix logo container alignment */
+            .logo-container {
+                position: relative !important;
+                left: auto !important;
+                width: 80%;
+                flex-wrap: wrap;
+                align-items: center !important;
+                gap: 5px;
+            }
+
+            /* Fix logo text container */
+            .logo-text {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* Remove all top/left margins from heading */
+            .logo-main {
+                margin: 0 !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2;
+            }
+
+            .logo-tagline {
+                margin: 0 !important;
+                font-size: 0.7rem !important;
+                line-height: 1.2;
+            }
+
+            /* Fix logo icon */
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-icon img {
+                margin-top: 0 !important;
+                width: 200%;
+                height: 200%;
+            }
+
+            /* Fix toggle button position */
+            .mobile-toggle {
+                position: relative !important;
+                right: auto !important;
+                top: auto !important;
+            }
+
+            /* Fix contact info inside header – remove extra line breaks */
+            .logo-container > div:last-child {
+                font-size: 0.65rem !important;
+                width: 100% !important;
+                margin-top: 5px !important;
+                padding: 5px 10px !important;
+                background: rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                text-align: center;
+                word-break: break-word;
+            }
+            .logo-container > div:last-child br {
+                display: none !important;
+            }
+
+            /* Keep other mobile fixes */
+            .hero-section {
+                margin-top: 80px !important;
+                min-height: 5vh !important;
+                padding: 0.5rem 1rem !important;
+            }
+            .home-content {
+                padding: 0.5rem 1rem 3rem 1rem !important;
+            }
+            .features-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+            .feature-card {
+                padding: 1.5rem;
+            }
+            .feature-icon i {
+                font-size: 70px !important;
+            }
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+            }
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            .section-title p {
+                font-size: 1rem;
+            }
+            .excellence-section {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+            .header {
+                padding: 0.8rem 1rem !important;
+                min-height: auto !important;
+            }
+            .nav-menu {
+                gap: 0.5rem;
+            }
+            .nav-link {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo-main {
+                font-size: 1.5rem !important;
+            }
+            .logo-tagline {
+                font-size: 0.6rem !important;
+            }
+            .feature-icon i {
+                font-size: 60px !important;
+            }
+            .batch-announcement {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+            .logo-container > div:last-child {
+                font-size: 0.6rem !important;
+            }
+        }
     </style>
 </head>
 <body>

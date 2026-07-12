@@ -703,7 +703,7 @@
             }
 
             /* ==========================================================
-               MOBILE HEADER - PERFECT ALIGNMENT FIX
+               MOBILE HEADER - PERFECT ALIGNMENT + BIGGER HEADING
                ========================================================== */
             .header {
                 padding: 0.5rem 0.8rem !important;
@@ -725,15 +725,15 @@
                 top: auto !important;
                 display: flex !important;
                 align-items: center !important;
-                gap: 6px !important;
+                gap: 8px !important;
                 flex: 1 1 auto !important;
                 flex-wrap: wrap !important;
                 min-width: 0 !important;
             }
 
             .logo-icon {
-                width: 32px !important;
-                height: 32px !important;
+                width: 38px !important;
+                height: 38px !important;
                 flex-shrink: 0 !important;
             }
             .logo-icon img {
@@ -752,10 +752,10 @@
                 gap: 0 !important;
             }
 
-            /* ====== CRITICAL: Force title to stay in ONE LINE ====== */
+            /* ====== BIGGER HEADING – increased from 1.1rem to 1.6rem ====== */
             .logo-main {
                 margin: 0 !important;
-                font-size: 1.1rem !important;
+                font-size: 1.6rem !important;  /* ← MUCH BIGGER */
                 line-height: 1.2 !important;
                 white-space: nowrap !important;
                 letter-spacing: 0.5px !important;
@@ -763,7 +763,7 @@
 
             .logo-tagline {
                 margin: 0 !important;
-                font-size: 0.45rem !important;
+                font-size: 0.5rem !important;
                 line-height: 1.2 !important;
                 white-space: nowrap !important;
             }
@@ -775,7 +775,7 @@
                 top: auto !important;
                 display: block !important;
                 flex-shrink: 0 !important;
-                font-size: 1.4rem !important;
+                font-size: 1.5rem !important;
                 margin-left: auto !important;
                 padding: 0 4px !important;
             }
@@ -785,7 +785,7 @@
                 flex: 0 0 100% !important;
                 width: 100% !important;
                 text-align: left !important;
-                font-size: 0.55rem !important;
+                font-size: 0.6rem !important;
                 margin-top: 4px !important;
                 padding: 4px 6px !important;
                 background: rgba(0, 0, 0, 0.2) !important;
@@ -808,7 +808,7 @@
 
             /* Hero & Content spacing for mobile */
             .hero-section {
-                margin-top: 70px !important;
+                margin-top: 75px !important;
                 min-height: 5vh !important;
                 padding: 0.5rem 1rem !important;
             }
@@ -852,14 +852,14 @@
 
         @media (max-width: 576px) {
             .logo-main {
-                font-size: 1rem !important;
+                font-size: 1.4rem !important; /* slightly smaller on very tiny screens */
             }
             .logo-tagline {
-                font-size: 0.4rem !important;
+                font-size: 0.45rem !important;
             }
             .logo-icon {
-                width: 28px !important;
-                height: 28px !important;
+                width: 32px !important;
+                height: 32px !important;
             }
             .feature-icon i {
                 font-size: 60px !important;

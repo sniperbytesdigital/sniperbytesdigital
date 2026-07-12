@@ -621,7 +621,7 @@
         }
 
         /* ============================================================
-           DESKTOP OVERRIDES (your original tweaks)
+           DESKTOP OVERRIDES
            ============================================================ */
         .hero-section {
             margin-top: 80px;
@@ -706,7 +706,7 @@
                MOBILE HEADER - PERFECT ALIGNMENT FIX
                ========================================================== */
             .header {
-                padding: 0.6rem 1rem !important;
+                padding: 0.5rem 0.8rem !important;
                 min-height: auto !important;
             }
 
@@ -725,21 +725,21 @@
                 top: auto !important;
                 display: flex !important;
                 align-items: center !important;
-                gap: 10px !important;
+                gap: 6px !important;
                 flex: 1 1 auto !important;
-                min-width: 0 !important; /* prevents overflow */
                 flex-wrap: wrap !important;
+                min-width: 0 !important;
             }
 
             .logo-icon {
-                width: 40px !important;
-                height: 40px !important;
+                width: 32px !important;
+                height: 32px !important;
                 flex-shrink: 0 !important;
             }
             .logo-icon img {
                 margin-top: 0 !important;
-                width: 200% !important;
-                height: 200% !important;
+                width: 100% !important;
+                height: 100% !important;
             }
 
             .logo-text {
@@ -749,58 +749,66 @@
                 align-items: flex-start !important;
                 flex-shrink: 1 !important;
                 min-width: 0 !important;
+                gap: 0 !important;
             }
 
+            /* ====== CRITICAL: Force title to stay in ONE LINE ====== */
             .logo-main {
                 margin: 0 !important;
-                font-size: 1.4rem !important;
+                font-size: 1.1rem !important;
                 line-height: 1.2 !important;
                 white-space: nowrap !important;
+                letter-spacing: 0.5px !important;
             }
 
             .logo-tagline {
                 margin: 0 !important;
-                font-size: 0.55rem !important;
+                font-size: 0.45rem !important;
                 line-height: 1.2 !important;
                 white-space: nowrap !important;
             }
 
-            /* Contact Info - drops to the second row, cleanly */
-            .logo-container > div:last-child {
-                flex: 0 0 100% !important;
-                width: 100% !important;
-                text-align: left !important;
-                font-size: 0.6rem !important;
-                margin-top: 4px !important;
-                padding: 4px 0 !important;
-                background: rgba(0, 0, 0, 0.2) !important;
-                border-radius: 6px !important;
-                padding-left: 8px !important;
-                border-top: 1px solid rgba(0, 255, 136, 0.15) !important;
-                word-break: break-word !important;
-            }
-            .logo-container > div:last-child br {
-                display: none !important;
-            }
-
+            /* Toggle button - fixed to the right */
             .mobile-toggle {
                 position: relative !important;
                 right: auto !important;
                 top: auto !important;
                 display: block !important;
                 flex-shrink: 0 !important;
-                font-size: 1.5rem !important;
-                margin-left: 10px !important;
+                font-size: 1.4rem !important;
+                margin-left: auto !important;
+                padding: 0 4px !important;
             }
 
-            /* Hide the standalone WhatsApp link in header on mobile (it's inside contact info anyway) */
+            /* Contact Info - full width row below */
+            .logo-container > div:last-child {
+                flex: 0 0 100% !important;
+                width: 100% !important;
+                text-align: left !important;
+                font-size: 0.55rem !important;
+                margin-top: 4px !important;
+                padding: 4px 6px !important;
+                background: rgba(0, 0, 0, 0.2) !important;
+                border-radius: 4px !important;
+                border-top: 1px solid rgba(0, 255, 136, 0.1) !important;
+                word-break: break-word !important;
+                line-height: 1.4 !important;
+            }
+            .logo-container > div:last-child br {
+                display: none !important;
+            }
+            .logo-container > div:last-child b {
+                display: inline !important;
+            }
+
+            /* Hide the standalone WhatsApp link in header on mobile */
             .header-container > a {
                 display: none !important;
             }
 
             /* Hero & Content spacing for mobile */
             .hero-section {
-                margin-top: 80px !important;
+                margin-top: 70px !important;
                 min-height: 5vh !important;
                 padding: 0.5rem 1rem !important;
             }
@@ -844,10 +852,14 @@
 
         @media (max-width: 576px) {
             .logo-main {
-                font-size: 1.2rem !important;
+                font-size: 1rem !important;
             }
             .logo-tagline {
-                font-size: 0.5rem !important;
+                font-size: 0.4rem !important;
+            }
+            .logo-icon {
+                width: 28px !important;
+                height: 28px !important;
             }
             .feature-icon i {
                 font-size: 60px !important;

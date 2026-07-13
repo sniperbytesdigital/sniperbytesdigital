@@ -40,9 +40,11 @@
             overflow-x: hidden;
         }
 
+        /* ===== HEADER – HEIGHT INCREASED ===== */
         .header {
             background: linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%);
-            padding: 1rem 2rem;
+            padding: 2.6rem 2.5rem;      /* was 1.8rem 2rem – more vertical space */
+            min-height: 160px;          /* was 100px – forces extra height */
             position: fixed;
             width: 100%;
             top: 0;
@@ -620,28 +622,7 @@
             opacity: 0.9;
         }
 
-        /* ============================================================
-           DESKTOP OVERRIDES
-           ============================================================ */
-        .hero-section {
-            margin-top: 80px;
-            padding: 0.5rem 2rem;
-            min-height: 10vh;
-        }
-        .home-content {
-            padding: 0.5rem 2rem 5rem 2rem;
-        }
-        .header {
-            padding: 1.8rem 2rem;
-            min-height: 100px;
-        }
-        .hero-section {
-            margin-top: 140px;
-        }
-
-        /* ============================================================
-           RESPONSIVE (Tablet & Mobile)
-           ============================================================ */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .nav-menu {
                 gap: 1rem;
@@ -701,175 +682,135 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
+        }
 
-            /* ==========================================================
-               MOBILE HEADER - PERFECT ALIGNMENT + BIGGER HEADING
-               ========================================================== */
+        /* ===== MOBILE CUSTOMIZATION – added extra rules for small screens ===== */
+        @media (max-width: 576px) {
             .header {
-                padding: 0.5rem 0.8rem !important;
-                min-height: auto !important;
+                padding: 0.8rem 0.8rem;   /* smaller padding */
+                min-height: auto;
             }
-
-            .header-container {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                align-items: center !important;
-                justify-content: space-between !important;
-                padding: 0 !important;
-                position: relative !important;
-            }
-
             .logo-container {
-                position: relative !important;
-                left: auto !important;
-                top: auto !important;
-                display: flex !important;
-                align-items: center !important;
-                gap: 8px !important;
-                flex: 1 1 auto !important;
-                flex-wrap: wrap !important;
-                min-width: 0 !important;
+                flex-wrap: wrap;          /* allow contact info to drop below */
+                gap: 2px;
+                position: relative;       /* release from absolute to stack properly */
+                left: auto;
+                width: 100%;
             }
-
             .logo-icon {
-                width: 38px !important;
-                height: 38px !important;
-                flex-shrink: 0 !important;
+                width: 35px;
+                height: 35px;
+                margin-top: 0;
             }
             .logo-icon img {
-                margin-top: 0 !important;
-                width: 100% !important;
-                height: 100% !important;
+                margin-top: 0;
+                width: 200%;
+                height: 200%;
             }
-
-            .logo-text {
-                display: flex !important;
-                flex-direction: column !important;
-                justify-content: center !important;
-                align-items: flex-start !important;
-                flex-shrink: 1 !important;
-                min-width: 0 !important;
-                gap: 0 !important;
-            }
-
-            /* ====== BIGGER HEADING – increased from 1.1rem to 1.6rem ====== */
             .logo-main {
-                margin: 0 !important;
-                font-size: 1.6rem !important;  /* ← MUCH BIGGER */
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
-                letter-spacing: 0.5px !important;
+                margin-left: 0 !important;
+                font-size: 1.3rem;
+                margin-top: 5px;
             }
-
             .logo-tagline {
-                margin: 0 !important;
-                font-size: 0.5rem !important;
-                line-height: 1.2 !important;
-                white-space: nowrap !important;
+                margin-left: 0 !important;
+                font-size: 0.6rem;
             }
-
-            /* Toggle button - fixed to the right */
+            .logo-text {
+                flex-direction: column;
+            }
             .mobile-toggle {
-                position: relative !important;
-                right: auto !important;
-                top: auto !important;
-                display: block !important;
-                flex-shrink: 0 !important;
-                font-size: 1.5rem !important;
-                margin-left: auto !important;
-                padding: 0 4px !important;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+                font-size: 1.3rem;
             }
-
-            /* Contact Info - full width row below */
-            .logo-container > div:last-child {
-                flex: 0 0 100% !important;
-                width: 100% !important;
-                text-align: left !important;
-                font-size: 0.6rem !important;
-                margin-top: 4px !important;
-                padding: 4px 6px !important;
-                background: rgba(0, 0, 0, 0.2) !important;
-                border-radius: 4px !important;
-                border-top: 1px solid rgba(0, 255, 136, 0.1) !important;
-                word-break: break-word !important;
-                line-height: 1.4 !important;
+            /* Contact info inside header – shrink and wrap */
+            .logo-container > div {
+                font-size: 0.6rem;
+                line-height: 1.3;
+                width: 100%;
+                margin-top: 2px;
             }
-            .logo-container > div:last-child br {
-                display: none !important;
+            .logo-container > div b {
+                font-size: 0.65rem;
             }
-            .logo-container > div:last-child b {
-                display: inline !important;
+            .logo-container > div br {
+                display: none;           /* hide excessive <br> to save space */
             }
-
-            /* Hide the standalone WhatsApp link in header on mobile */
-            .header-container > a {
-                display: none !important;
+            /* Override the hidden br for the first few line breaks? */
+            .logo-container > div br:first-of-type,
+            .logo-container > div br:nth-of-type(2),
+            .logo-container > div br:nth-of-type(3) {
+                display: none;
             }
-
-            /* Hero & Content spacing for mobile */
+            /* Hero section & fee box */
             .hero-section {
-                margin-top: 75px !important;
-                min-height: 5vh !important;
-                padding: 0.5rem 1rem !important;
+                margin-top: 140px;
+                padding: 0.5rem 0.5rem;
+                min-height: auto;
             }
-            .home-content {
-                padding: 0.5rem 1rem 3rem 1rem !important;
+            .hero-section div {          /* the fees + duration box */
+                font-size: 0.8rem !important;
+                padding: 0.5rem !important;
+                margin: 0 0 0.5rem 0 !important;
+                border-radius: 6px;
             }
+            /* Feature cards */
             .features-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1.5rem;
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
             .feature-card {
-                padding: 1.5rem;
-            }
-            .feature-icon i {
-                font-size: 70px !important;
+                padding: 1rem;
             }
             .feature-icon {
-                width: 80px;
-                height: 80px;
+                width: 40px;
+                height: 40px;
+                margin-bottom: 0.8rem;
             }
+            .feature-icon i {
+                font-size: 30px !important;  /* override inline 100px */
+            }
+            .feature-card h3 {
+                font-size: 1.1rem;
+            }
+            .feature-card p {
+                font-size: 0.85rem;
+            }
+            /* Section titles */
             .section-title h2 {
                 font-size: 1.8rem;
             }
             .section-title p {
                 font-size: 1rem;
             }
+            .section-title {
+                margin-bottom: 1.5rem;
+            }
+            /* Excellence section */
             .excellence-section {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
+            .excellence-content h2 {
+                font-size: 1.5rem;
+            }
+            .excellence-list li {
+                font-size: 0.9rem;
+                padding: 0.4rem 0;
+            }
+            .stat-item {
+                padding: 1rem;
+            }
             .stat-number {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
-            .nav-menu {
-                gap: 0.5rem;
+            .stat-label {
+                font-size: 0.8rem;
             }
-            .nav-link {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .logo-main {
-                font-size: 1.4rem !important; /* slightly smaller on very tiny screens */
-            }
-            .logo-tagline {
-                font-size: 0.45rem !important;
-            }
-            .logo-icon {
-                width: 32px !important;
-                height: 32px !important;
-            }
-            .feature-icon i {
-                font-size: 60px !important;
-            }
-            .batch-announcement {
-                font-size: 0.7rem;
-                padding: 0.4rem 0.8rem;
-            }
-            .logo-container > div:last-child {
-                font-size: 0.5rem !important;
+            .home-content {
+                padding: 0.5rem 0.8rem 3rem 0.8rem;
             }
         }
     </style>
@@ -886,13 +827,17 @@
                     <div class="logo-tagline">control the soul of circuits</div>
                 </div>
 
-				<div>
+                <!-- All contact info stays INSIDE the green header -->
+                <div>
                     <br><br><br>
-					<b>CONTACT INFORMATION</b><br>
-						TELEGRAM GROUP <a href="https://t.me/+sWOipyWflicwOTg1" style="color: cyan;"> CLICK HERE TO JOIN </a> <br>
-						OWNER TELEGRAM ID - @SNIPERBYTESOFFICIAL
-				</b> <br>
-				</div>
+                    <b>CONTACT INFORMATION</b><br>
+                        TELEGRAM GROUP <a href="https://t.me/+sWOipyWflicwOTg1" style="color: cyan;"> CLICK HERE TO JOIN </a> <br>
+                        OWNER TELEGRAM ID - @SNIPERBYTESOFFICIAL <br>
+                        CALL OR WHATSAPP - +919309960489  <br>
+                        GOOGLE CHAT - sniperbytesofficial@gmail.com <br>
+						YOUTUBE CHANNEL - @sniperbytesdigital
+                </b> <br>
+                </div>
             </div>
             
             <div class="mobile-toggle">
@@ -921,19 +866,27 @@
                 <path d="M10,50 Q30,70 50,50 Q70,30 90,50" fill="none" stroke="#00ff88" stroke-width="2"/>
             </svg>
         </div>
-        <!-- Hero section is now empty with minimal height -->
+		<div style="text-align:center; margin: 0 0 2rem 0; padding: 1rem; background: rgba(0,255,136,0.08); border: 1px solid var(--cyber-green); border-radius: 10px; font-size: 1.3rem; font-weight: bold; color: var(--cyber-green);">
+                ONLINE TRAINING FEES INR ₹10000 OR YOU CAN EVEN PAY IN BITCOINS <br>
+				DURATION 6 MONTHS
+            </div>
+
     </section>
-	<br><br><br>
-    <!-- Home Content Section - Now starts immediately after header -->
+    
+
+	
     <section class="home-content">
-        <div class="container">
+            <!-- ===== ADDED LINE – exactly as requested ===== -->
+            
+		<div class="container">
             <div class="section-title">
                 <h2>SNIPER BYTES</h2>
                 <p>SYLLABUS</p>
             </div>
 
+            <!-- ========================================== -->
+
             <div class="features-grid">
-              
                 <div class="feature-card">
                      <div class="feature-icon">
 	<i class="fas fa-circle" style="position:relative; display:inline-block; font-size:100px; color:#1a1a1a; text-shadow: 0 0 20px #627EEA, 0 0 40px #627EEA, 0 0 80px #627EEA; border: 2px solid #627EEA; border-radius: 50%;"></i>                    
@@ -1025,18 +978,15 @@
             const searchTerm = document.querySelector('.search-box input').value;
             if (searchTerm.trim() !== '') {
                 alert(`Searching for: ${searchTerm}`);
-                // In a real implementation, you would redirect or filter content
             }
         });
 
-        // Allow pressing Enter in search box
         document.querySelector('.search-box input').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 document.querySelector('.fa-search').click();
             }
         });
 
-        // CTA button functionality
         document.querySelector('.cta-button').addEventListener('click', function() {
             window.scrollTo({
                 top: document.querySelector('.home-content').offsetTop - 100,
@@ -1044,28 +994,22 @@
             });
         });
 
-        // Add scroll effect to header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.style.padding = '0.5rem 2rem';
                 header.style.background = 'var(--dark-green)';
             } else {
-                header.style.padding = '1rem 2rem';
+                header.style.padding = '2.8rem 3rem';
                 header.style.background = 'linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%)';
             }
         });
 
-        // NEW FUNCTION: Copy dark web link to clipboard
         function copyDarkWebLink() {
             const linkText = "ih7uequqimy5ajxe4zavuwvrxfq3rgutpnkotqjthdebfmwvvbbqa3ad.onion";
-            
-            // Modern clipboard API
             navigator.clipboard.writeText(linkText).then(function() {
-                // Show success notification
                 showToast("✅ Dark Web link copied to clipboard!");
             }).catch(function() {
-                // Fallback for older browsers
                 const textarea = document.createElement('textarea');
                 textarea.value = linkText;
                 document.body.appendChild(textarea);
@@ -1076,21 +1020,15 @@
             });
         }
 
-        // Function to show toast notification
         function showToast(message) {
-            // Remove existing toast if any
             const existingToast = document.querySelector('.toast-notification');
             if (existingToast) {
                 existingToast.remove();
             }
-            
-            // Create new toast
             const toast = document.createElement('div');
             toast.className = 'toast-notification';
             toast.textContent = message;
             document.body.appendChild(toast);
-            
-            // Remove toast after animation
             setTimeout(function() {
                 if (toast && toast.parentNode) {
                     toast.remove();
@@ -1098,7 +1036,6 @@
             }, 2000);
         }
 
-        // Optional: Make the dark web link clickable to copy (if users click the link itself)
         document.getElementById('darkwebLink').addEventListener('click', function() {
             copyDarkWebLink();
         });

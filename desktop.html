@@ -40,10 +40,11 @@
             overflow-x: hidden;
         }
 
+        /* ===== HEADER – HEIGHT INCREASED ===== */
         .header {
             background: linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%);
-            padding: 1.8rem 3rem;
-			min-height: 150px; 
+            padding: 2.8rem 3rem;      /* was 1.8rem 2rem – more vertical space */
+            min-height: 180px;          /* was 100px – forces extra height */
             position: fixed;
             width: 100%;
             top: 0;
@@ -706,32 +707,34 @@
                 padding: 0.5rem 1rem;
             }
         }
-		.hero-section {
-    margin-top: 80px; /* Reduced from 120px */
-    padding: 0.5rem 2rem; /* Reduced from 1rem 2rem */
-    text-align: center;
-    background: radial-gradient(circle at center, rgba(10, 92, 54, 0.2) 0%, rgba(10, 15, 12, 0.8) 70%);
-    position: relative;
-    overflow: hidden;
-    min-height: 10vh; /* Reduced from 20vh */
-}
 
-.home-content {
-    padding: 0.5rem 2rem 5rem 2rem; /* Reduced top padding from 1rem to 0.5rem */
-    background: linear-gradient(135deg, var(--bg-dark) 0%, #0c1511 100%);
-    position: relative;
-    overflow: hidden;
-}
-.header {
-    padding: 1.8rem 2rem; /* Increased padding for taller header */
-    min-height: 100px; /* Set minimum height */
-}
+        /* ===== FINAL OVERRIDES – ONLY HEIGHT CHANGED ===== */
+        .hero-section {
+            margin-top: 200px;         /* was 140px – accounts for taller header */
+            padding: 0.5rem 2rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(10, 92, 54, 0.2) 0%, rgba(10, 15, 12, 0.8) 70%);
+            position: relative;
+            overflow: hidden;
+            min-height: 10vh;
+        }
 
-.hero-section {
-    margin-top: 140px; /* Increased to account for taller header */
-}
+        .home-content {
+            padding: 0.5rem 2rem 5rem 2rem;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0c1511 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
+        /* Header height already increased above – these lines just confirm the final values */
+        .header {
+            padding: 2.8rem 3rem;      /* increased */
+            min-height: 180px;          /* increased */
+        }
 
+        .hero-section {
+            margin-top: 200px;          /* increased to match */
+        }
     </style>
 </head>
 <body>
@@ -746,15 +749,16 @@
                     <div class="logo-tagline">control the soul of circuits</div>
                 </div>
 
-				<div>
+                <!-- All contact info stays INSIDE the green header -->
+                <div>
                     <br><br><br>
-					<b>CONTACT INFORMATION</b><br>
-						TELEGRAM GROUP <a href="https://t.me/+sWOipyWflicwOTg1" style="color: cyan;"> CLICK HERE TO JOIN </a> <br>
-						OWNER TELEGRAM ID - @SNIPERBYTESOFFICIAL <br>
-						WHATSAPP - +919309960489  <br>
-						GOOGLE CHAT - sniperbytesofficial@gmail.com
-				</b> <br>
-				</div>
+                    <b>CONTACT INFORMATION</b><br>
+                        TELEGRAM GROUP <a href="https://t.me/+sWOipyWflicwOTg1" style="color: cyan;"> CLICK HERE TO JOIN </a> <br>
+                        OWNER TELEGRAM ID - @SNIPERBYTESOFFICIAL <br>
+                        WHATSAPP - +919309960489  <br>
+                        GOOGLE CHAT - sniperbytesofficial@gmail.com
+                </b> <br>
+                </div>
             </div>
             
             <div class="mobile-toggle">
@@ -783,10 +787,9 @@
                 <path d="M10,50 Q30,70 50,50 Q70,30 90,50" fill="none" stroke="#00ff88" stroke-width="2"/>
             </svg>
         </div>
-        <!-- Hero section is now empty with minimal height -->
     </section>
-	<br><br><br>
-    <!-- Home Content Section - Now starts immediately after header -->
+    <br><br><br>
+
     <section class="home-content">
         <div class="container">
             <div class="section-title">
@@ -795,7 +798,6 @@
             </div>
 
             <div class="features-grid">
-              
                 <div class="feature-card">
                      <div class="feature-icon">
 	<i class="fas fa-circle" style="position:relative; display:inline-block; font-size:100px; color:#1a1a1a; text-shadow: 0 0 20px #627EEA, 0 0 40px #627EEA, 0 0 80px #627EEA; border: 2px solid #627EEA; border-radius: 50%;"></i>                    
@@ -887,18 +889,15 @@
             const searchTerm = document.querySelector('.search-box input').value;
             if (searchTerm.trim() !== '') {
                 alert(`Searching for: ${searchTerm}`);
-                // In a real implementation, you would redirect or filter content
             }
         });
 
-        // Allow pressing Enter in search box
         document.querySelector('.search-box input').addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 document.querySelector('.fa-search').click();
             }
         });
 
-        // CTA button functionality
         document.querySelector('.cta-button').addEventListener('click', function() {
             window.scrollTo({
                 top: document.querySelector('.home-content').offsetTop - 100,
@@ -906,28 +905,22 @@
             });
         });
 
-        // Add scroll effect to header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.style.padding = '0.5rem 2rem';
                 header.style.background = 'var(--dark-green)';
             } else {
-                header.style.padding = '1rem 2rem';
+                header.style.padding = '2.8rem 3rem';
                 header.style.background = 'linear-gradient(135deg, var(--dark-green) 0%, var(--serpent-green) 50%, var(--light-green) 100%)';
             }
         });
 
-        // NEW FUNCTION: Copy dark web link to clipboard
         function copyDarkWebLink() {
             const linkText = "ih7uequqimy5ajxe4zavuwvrxfq3rgutpnkotqjthdebfmwvvbbqa3ad.onion";
-            
-            // Modern clipboard API
             navigator.clipboard.writeText(linkText).then(function() {
-                // Show success notification
                 showToast("✅ Dark Web link copied to clipboard!");
             }).catch(function() {
-                // Fallback for older browsers
                 const textarea = document.createElement('textarea');
                 textarea.value = linkText;
                 document.body.appendChild(textarea);
@@ -938,21 +931,15 @@
             });
         }
 
-        // Function to show toast notification
         function showToast(message) {
-            // Remove existing toast if any
             const existingToast = document.querySelector('.toast-notification');
             if (existingToast) {
                 existingToast.remove();
             }
-            
-            // Create new toast
             const toast = document.createElement('div');
             toast.className = 'toast-notification';
             toast.textContent = message;
             document.body.appendChild(toast);
-            
-            // Remove toast after animation
             setTimeout(function() {
                 if (toast && toast.parentNode) {
                     toast.remove();
@@ -960,7 +947,6 @@
             }, 2000);
         }
 
-        // Optional: Make the dark web link clickable to copy (if users click the link itself)
         document.getElementById('darkwebLink').addEventListener('click', function() {
             copyDarkWebLink();
         });
